@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelas 8.1</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b1424;
+  color: white;
+}
+
+header {
+  padding: 25px 15px;
+  text-align: center;
+  background: linear-gradient(135deg,#142b49,#087caa);
+}
+
+header h1 {
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin-top: 8px;
+  color: #d5eaff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: #101e32;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav button {
+  border: none;
+  border-radius: 30px;
+  padding: 11px 20px;
+  color: white;
+  background: #203957;
+  cursor: pointer;
+  transition: .3s;
+}
+
+nav button:hover,
+nav button.active {
+  background: #00a9e0;
+  transform: scale(1.05);
+}
+
+.container {
+  max-width: 1100px;
+  padding: 20px;
+  margin: auto;
+}
+
+.section {
+  display: none;
+  animation: masuk .5s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes masuk {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #43c9ff;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 15px;
+  background: linear-gradient(135deg,#153c60,#087caa);
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 35px;
+}
+
+.hero p {
+  margin-top: 12px;
+}
+
+.box {
+  background: #14243a;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #263e59;
+}
+
+.structure {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 15px;
+}
+
+.position {
+  background: #203957;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.position:hover {
+  transform: translateY(-5px);
+  background: #245078;
+}
+
+.position h3 {
+  color: #43c9ff;
+  margin-bottom: 8px;
+}
+
+.search {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: 1px solid #385474;
+  background: #14243a;
+  color: white;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.students {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(145px,1fr));
+  gap: 15px;
+}
+
+.student {
+  background: #14243a;
+  padding: 18px 10px;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid #263e59;
+  transition: .3s;
+}
+
+.student:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px #0005;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 12px;
+  border: 4px solid #36bfff;
+  background: #29435e;
+}
+
+.student-name {
+  font-weight: bold;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+button {
+  cursor: pointer;
+}
+
+.action {
+  border: none;
+  border-radius: 30px;
+  padding: 9px 13px;
+  margin: 3px;
+  background: #087eae;
+  color: white;
+  transition: .3s;
+}
+
+.action:hover {
+  background: #00b8ee;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #8da9c5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>KELAS 8.1</h1>
+  <p>Website Resmi Kelas 8.1</p>
+</header>
+
+<nav>
+  <button class="active" onclick="halaman('home',this)">Home</button>
+  <button onclick="halaman('struktur',this)">Struktur</button>
+  <button onclick="halaman('anggota',this)">Anggota</button>
+</nav>
+
+<div class="container">
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h2>WELCOME TO 8.1</h2>
+  </div>
+
+  <div class="box" style="margin-top:20px;text-align:center">
+    <h2>KELAS 8.1</h2>
+    <p>Jumlah anggota: 42 siswa</p>
+    <p>Selamat datang di website kelas kami!</p>
+  </div>
+</section>
+
+<section id="struktur" class="section">
+  <h2>STRUKTUR KELAS</h2>
+
+  <div class="structure">
+
+    <div class="position">
+      <h3>Ketua Kelas</h3>
+      <p>Kheynara</p>
+    </div>
+
+    <div class="position">
+      <h3>Wakil Ketua</h3>
+      <p>Bagus</p>
+    </div>
+
+    <div class="position">
+      <h3>Sekretaris 1</h3>
+      <p>Ica</p>
+    </div>
+
+    <div class="position">
+      <h3>Sekretaris 2</h3>
+      <p>Citra</p>
+    </div>
+
+    <div class="position">
+      <h3>Bendahara 1</h3>
+      <p>Nabilla</p>
+    </div>
+
+    <div class="position">
+      <h3>Bendahara 2</h3>
+      <p>Meita</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="anggota" class="section">
+  <h2>ANGGOTA KELAS 8.1</h2>
+
+  <input
+    class="search"
+    id="cari"
+    placeholder="Cari nama siswa..."
+    oninput="tampil()"
+  >
+
+  <div class="box">
+    <input
+      id="namaBaru"
+      class="search"
+      placeholder="Masukkan nama siswa baru..."
+      style="margin-bottom:5px"
+    >
+    <button class="action" onclick="tambahSiswa()">
+      + Tambah Siswa
+    </button>
+  </div>
+
+  <div class="students" id="daftar"></div>
+</section>
+
+</div>
+
+<footer>
+  © 2026 KELAS 8.1
+</footer>
+
+<script>
+const KEY = "kelas_81_data_v1";
+
+const namaAwal = [
+  "Siswa 1","Siswa 2","Siswa 3","Siswa 4",
+  "Siswa 5","Siswa 6","Siswa 7","Siswa 8",
+  "Siswa 9","Siswa 10","Siswa 11","Siswa 12",
+  "Siswa 13","Siswa 14","Siswa 15","Siswa 16",
+  "Siswa 17","Siswa 18","Siswa 19","Siswa 20",
+  "Siswa 21","Siswa 22","Siswa 23","Siswa 24",
+  "Siswa 25","Siswa 26","Siswa 27","Siswa 28",
+  "Siswa 29","Siswa 30","Siswa 31","Siswa 32",
+  "Siswa 33","Siswa 34","Siswa 35","Siswa 36",
+  "Siswa 37","Siswa 38","Siswa 39","Siswa 40",
+  "Siswa 41","Siswa 42"
+];
+
+let siswa = [];
+
+try {
+  const data = JSON.parse(localStorage.getItem(KEY));
+  siswa = Array.isArray(data)
+    ? data
+    : namaAwal.map(nama => ({nama,foto:""}));
+} catch {
+  siswa = namaAwal.map(nama => ({nama,foto:""}));
+}
+
+function simpan() {
+  try {
+    localStorage.setItem(KEY, JSON.stringify(siswa));
+  } catch(e) {
+    alert("Penyimpanan penuh. Coba gunakan foto yang lebih kecil.");
+  }
+}
+
+function halaman(id, tombol) {
+  document.querySelectorAll(".section").forEach(s => {
+    s.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(b => {
+    b.classList.remove("active");
+  });
+
+  tombol.classList.add("active");
+}
+
+function tambahSiswa() {
+  const input = document.getElementById("namaBaru");
+  const nama = input.value.trim();
+
+  if (!nama) {
+    alert("Masukkan nama siswa!");
+    return;
+  }
+
+  siswa.push({nama,foto:""});
+  simpan();
+  input.value = "";
+  tampil();
+}
+
+function editNama(i) {
+  const baru = prompt("Edit nama siswa:", siswa[i].nama);
+
+  if (baru && baru.trim()) {
+    siswa[i].nama = baru.trim();
+    simpan();
+    tampil();
+  }
+}
+
+function hapusSiswa(i) {
+  if (confirm("Yakin ingin menghapus siswa ini?")) {
+    siswa.splice(i,1);
+    simpan();
+    tampil();
+  }
+}
+
+function gantiFoto(i, file) {
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("Pilih file gambar!");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = e => {
+    const img = new Image();
+
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const ukuran = 400;
+
+      canvas.width = ukuran;
+      canvas.height = ukuran;
+
+      const ctx = canvas.getContext("2d");
+      const sisi = Math.min(img.width,img.height);
+      const x = (img.width-sisi)/2;
+      const y = (img.height-sisi)/2;
+
+      ctx.drawImage(
+        img,x,y,sisi,sisi,
+        0,0,ukuran,ukuran
+      );
+
+      siswa[i].foto = canvas.toDataURL("image/jpeg",0.75);
+      simpan();
+      tampil();
+    };
+
+    img.src = e.target.result;
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function tampil() {
+  const area = document.getElementById("daftar");
+  const cari = document.getElementById("cari").value.toLowerCase();
+
+  area.innerHTML = "";
+
+  siswa.forEach((s,i) => {
+    if (!s.nama.toLowerCase().includes(cari)) return;
+
+    const card = document.createElement("div");
+    card.className = "student";
+
+    const foto = document.createElement("img");
+    foto.className = "photo";
+
+    foto.src = s.foto || "data:image/svg+xml," +
+      encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#29435e"/><circle cx="50" cy="37" r="17" fill="#b9d9ef"/><path d="M15 100 Q15 60 50 60 Q85 60 85 100" fill="#b9d9ef"/></svg>'
+      );
+
+    const nama = document.createElement("div");
+    nama.className = "student-name";
+    nama.textContent = s.nama;
+
+    const edit = document.createElement("button");
+    edit.className = "action";
+    edit.textContent = "Edit";
+    edit.onclick = () => editNama(i);
+
+    const fotoInput = document.createElement("input");
+    fotoInput.type = "file";
+    fotoInput.accept = "image/*";
+    fotoInput.hidden = true;
+    fotoInput.onchange = () => gantiFoto(i,fotoInput.files[0]);
+
+    const ganti = document.createElement("button");
+    ganti.className = "action";
+    ganti.textContent = "Foto";
+    ganti.onclick = () => fotoInput.click();
+
+    const hapus = document.createElement("button");
+    hapus.className = "action";
+    hapus.textContent = "Hapus";
+    hapus.onclick = () => hapusSiswa(i);
+
+    card.append(foto,nama,edit,ganti,fotoInput,hapus);
+    area.appendChild(card);
+  });
+}
+
+tampil();
+</script>
+
+</body>
+</html>
